@@ -47,9 +47,11 @@ Otra diferencia es que los árboles de decisión "profundos" pueden sufrir un aj
 <div align="center">
   
 **Decision Tree**
+
 ![Decision Tree](https://miro.medium.com/max/625/1*LMoJmXCsQlciGTEyoSN39g.jpeg "Decision Tree")
 
 **Random Forest**
+
 ![Random Forest](https://miro.medium.com/max/625/1*VHDtVaDPNepRglIAv72BFg.jpeg "Random Forest")
 
 </div>
