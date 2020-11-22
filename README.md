@@ -44,6 +44,12 @@ Por ejemplo, para predecir si una persona hará clic en un anuncio en línea, pu
 
 Otra diferencia es que los árboles de decisión "profundos" pueden sufrir un ajuste excesivo. La mayoría de las veces, el bosque aleatorio evita esto creando subconjuntos aleatorios de las características y construyendo árboles más pequeños usando esos subconjuntos. Posteriormente, combina los subárboles. Es importante tener en cuenta que esto no funciona todas las veces y también hace que el cálculo sea más lento, dependiendo de cuántos árboles construya el bosque aleatorio.
 
+<div align="center">
+  
+**Decision Tree**
 ![Decision Tree](https://miro.medium.com/max/625/1*LMoJmXCsQlciGTEyoSN39g.jpeg "Decision Tree")
 
+**Random Forest**
 ![Random Forest](https://miro.medium.com/max/625/1*VHDtVaDPNepRglIAv72BFg.jpeg "Random Forest")
+
+</div>
