@@ -1,4 +1,4 @@
-# RandomForestClassifier
+﻿# RandomForestClassifier
 Team 3
 
 ARREDONDO GOMEZ RAMON ALEJANDRO
@@ -55,3 +55,25 @@ Otra diferencia es que los árboles de decisión "profundos" pueden sufrir un aj
 ![Random Forest](https://miro.medium.com/max/625/1*VHDtVaDPNepRglIAv72BFg.jpeg "Random Forest")
 
 </div>
+
+### POR QUE USAR EL ALGORITMO RANDOM FOREST 
+
+Para responder a esta pregunta, sugeriremos algunas de sus ventajas y características importantes que aclararán su mente por qué utilizar el algoritmo de RF en el aprendizaje automático.
+
+•	El algoritmo de bosque aleatorio se puede utilizar tanto para clasificaciones como para tareas de regresión.
+•	Proporciona una mayor precisión a través de la validación cruzada.
+•	El clasificador de bosque aleatorio manejará los valores faltantes y mantendrá la precisión de una gran proporción de datos.
+•	Si hay más árboles, no permitirá el ajuste excesivo de árboles en el modelo, no los aceptara.
+•	Tiene el poder de manejar un gran conjunto de datos con mayor diversidad en sus dimensiones.
+
+### ¿CUANDO USAR EL ANALISIS DE BOSQUES ALEATORIOS?
+
+Hay varias aplicaciones donde se puede aplicar un análisis de RF. Discutiremos algunos de los sectores donde se puede aplicar el bosque aleatorio. También veremos más de cerca cuando el análisis de bosque aleatorio entre en juego.
+
+•	Sector bancario: El sector bancario se compone de la mayoría de los usuarios. Hay muchos clientes leales y también clientes fraudulentos. Para determinar si el cliente es leal o fraudulento, entra el análisis de bosque aleatorio. Con la ayuda de un algoritmo de bosque aleatorio en el aprendizaje automático, podemos determinar fácilmente si el cliente es fraude o leal. Un sistema utiliza un conjunto de algoritmos aleatorios que identifica las transacciones fraudulentas mediante una serie de patrones.
+
+•	Medicamentos: Los medicamentos necesitan una combinación compleja de productos químicos específicos. Así, para identificar la gran combinación en las medicinas, se puede utilizar Random Forest. Con la ayuda del algoritmo de aprendizaje automático, se ha vuelto más fácil detectar y predecir la sensibilidad a los medicamentos de un medicamento. Además, ayuda a identificar la enfermedad del paciente mediante el análisis de la historia clínica del paciente.
+
+•	Mercado de valores: El aprendizaje automático también juega un papel en el análisis del mercado de valores. Cuando se desea conocer el comportamiento del mercado de valores, con la ayuda del algoritmo de bosque aleatorio, se puede analizar el comportamiento del mercado de valores. Además, puede mostrar la pérdida o ganancia esperada que se puede producir al comprar una acción en particular.
+
+•	Comercio Electrónico (E-Commerce): Cuando le resulte difícil recomendar o sugerir qué tipo de productos debe ver su cliente. Aquí es donde puede utilizar un algoritmo de bosque aleatorio. Usando un sistema de aprendizaje automático, puede sugerir los productos que serán más probables para un cliente. Usando un patrón determinado y siguiendo el interés del producto de un cliente, puede sugerir productos similares a sus clientes.
