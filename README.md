@@ -1,14 +1,43 @@
 ﻿# RandomForestClassifier
-Team 3
 
-ARREDONDO GOMEZ RAMON ALEJANDRO
+<div align="center">
 
-AULIS SANCHEZ VICTOR JAIR
+**Instituto Tecnológico de Tijuana**
 
-BOJORQUEZ VARGAS CARLOS FRANCISCO
+Departamento de Ciencias y Computación
 
-CABRERA LUGO ALBERTO
+Ingeniería en Sistemas Computacionales
+ 
+ [![](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)
 
+**Title:**
+Random Forest Classifier
+
+**Subject:**
+BDD-1704 SC9A Datos Masivos
+
+**Unit:**
+ II
+
+**Professor:**
+JOSE CHRISTIAN ROMERO HERNANDEZ
+
+**Team 3**
+
+ARREDONDO GOMEZ RAMON ALEJANDRO     15210326
+
+AULIS SANCHEZ VICTOR JAIR           17212836
+
+BOJORQUEZ VARGAS CARLOS FRANCISCO   16211977
+
+CABRERA LUGO ALBERTO                17210533 
+
+**Group:**
+SC9A
+
+**Date:**
+Tijuana, Baja California, November 24, 2020. 
+</div>
 
 
 ### ¿Qué es y cómo funciona random forest classifier?
