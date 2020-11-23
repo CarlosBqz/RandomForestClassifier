@@ -36,7 +36,7 @@ CABRERA LUGO ALBERTO                17210533
 SC9A
 
 **Date:**
-Tijuana, Baja California, November 24, 2020. 
+Tijuana, Baja California, November 23, 2020. 
 </div>
 
 
