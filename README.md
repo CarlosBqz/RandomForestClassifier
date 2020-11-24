@@ -106,3 +106,71 @@ Hay varias aplicaciones donde se puede aplicar un análisis de RF. Discutiremos 
 •	Mercado de valores: El aprendizaje automático también juega un papel en el análisis del mercado de valores. Cuando se desea conocer el comportamiento del mercado de valores, con la ayuda del algoritmo de bosque aleatorio, se puede analizar el comportamiento del mercado de valores. Además, puede mostrar la pérdida o ganancia esperada que se puede producir al comprar una acción en particular.
 
 •	Comercio Electrónico (E-Commerce): Cuando le resulte difícil recomendar o sugerir qué tipo de productos debe ver su cliente. Aquí es donde puede utilizar un algoritmo de bosque aleatorio. Usando un sistema de aprendizaje automático, puede sugerir los productos que serán más probables para un cliente. Usando un patrón determinado y siguiendo el interés del producto de un cliente, puede sugerir productos similares a sus clientes.
+
+
+
+```scala
+import org.apache.spark.ml.Pipeline
+import org.apache.spark.ml.classification.{RandomForestClassificationModel, RandomForestClassifier}
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer}
+
+// Load and parse the data file, converting it to a DataFrame.
+val data = spark.read.format("libsvm").load("C:\\Users\\beto_\\Desktop\\Datos//Masivos//clase\\Spark\\data\\mllib\\sample_libsvm_data.txt")
+//val data = spark.read.format("libsvm").load("C:\\spark-2.4.7-bin-hadoop2.7\\data\\mllib\\sample_libsvm_data.txt")
+
+// Index labels, adding metadata to the label column.
+// Fit on whole dataset to include all labels in index.
+val labelIndexer = new StringIndexer()
+  labelIndexer.setInputCol("label")
+  labelIndexer.setOutputCol("indexedLabel")
+  labelIndexer.fit(data)
+
+// Automatically identify categorical features, and index them.
+// Set maxCategories so features with > 4 distinct values are treated as continuous.
+val featureIndexer = new VectorIndexer()
+  featureIndexer.setInputCol("features")
+  featureIndexer.setOutputCol("indexedFeatures")
+  featureIndexer.setMaxCategories(4)
+  featureIndexer.fit(data)
+
+// Split the data into training and test sets (30% held out for testing).
+val Array(trainingData, testData) = data.randomSplit(Array(0.7, 0.3))
+
+// Train a RandomForest model.
+val rf = new RandomForestClassifier()
+  rf.setLabelCol("indexedLabel")
+  rf.setFeaturesCol("indexedFeatures")
+  rf.setNumTrees(10)
+
+// Convert indexed labels back to original labels.
+val labelConverter = new IndexToString()
+  labelConverter.setInputCol("prediction")
+  labelConverter.setOutputCol("predictedLabel")
+  labelConverter.setLabels(labelIndexer.labelsArray(0)) //Aqui marca error <console>:32: error: value labelsArray is not a member of org.apache.spark.ml.feature.StringIndexer
+
+// Chain indexers and forest in a Pipeline.
+val pipeline = new Pipeline()
+  pipeline.setStages(Array(labelIndexer, featureIndexer, rf, labelConverter))
+
+// Train model. This also runs the indexers.
+val model = pipeline.fit(trainingData)
+
+// Make predictions.
+val predictions = model.transform(testData)
+
+// Select example rows to display.
+predictions.select("predictedLabel", "label", "features").show(5)
+
+// Select (prediction, true label) and compute test error.
+val evaluator = new MulticlassClassificationEvaluator()
+  evaluator.setLabelCol("indexedLabel")
+  evaluator.setPredictionCol("prediction")
+  evaluator.setMetricName("accuracy")
+val accuracy = evaluator.evaluate(predictions)
+println(s"Test Error = ${(1.0 - accuracy)}")
+
+val rfModel = model.stages(2).asInstanceOf[RandomForestClassificationModel]
+
+println(s"Learned classification forest model:\n ${rfModel.toDebugString}")
+```
